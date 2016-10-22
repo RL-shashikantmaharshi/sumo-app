@@ -1,0 +1,35 @@
+<div class="content-panel content-center">
+    <div class="model-header">
+        <h2>Select an Employee</h2>
+    </div>
+    <div>
+        <form action="javascript:void(0)" method="POST">
+            <div class="clearfix form-item">
+                <input type="checkbox"></input> Send welcome email to employee
+            </div>
+            <div class="clearfix form-item">
+                Select a Team in the Organization <span class="error-msg pull-right" ng-show="!teamMatched && showError">* Please enter valid Team name</span><br>
+                <span class="customarrow">
+                    <input type="text" list="team" placeholder="Select Team..." ng-model="team">
+                </span>
+                <datalist id="team">
+                  <option ng-repeat="name in options.team" value="{{name}}">
+                </datalist>
+            </div>
+            <div class="clearfix form-item">
+                Select an Employee <span class="error-msg pull-right" ng-show="!employeeMatched && showError">* Please enter valid Employee name</span><br>
+                <span class="customarrow">
+                    <input type="text" list="employees" placeholder="Select Employee..." ng-model="employee">
+                </span>
+                <datalist id="employees">
+                  <option ng-repeat="name in options.employees" value="{{name}}">
+                </datalist>
+            </div>
+            <div class="clearfix form-item pull-right"> 
+                <a ng-click="clickedCancel()" class="action-btn" href="javascript:void(0);">Cancel</a> 
+                <a ng-click="clickedSubmit()" class="action-btn" href="javascript:void(0);">OK</a> 
+            </div>
+        </form>
+    </div>
+    <a ng-click="clickedCancel()" href="javascript:void(0);" class="close-btn"><i></i><span>X</span></a> 
+</div>
